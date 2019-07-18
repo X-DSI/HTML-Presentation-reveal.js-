@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>My Experience</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -25,17 +25,19 @@
 	<body>
 		<div class="reveal">
 			<div class="slides" >
-				<section data-transition="zoom">Hi There!</section>
-				<section data-transition="zoom">
-					<pre><code data-trim data-noescape data-line-numbers>
-				(def lazy-fib
-				  (concat
-				   [0 1]
-				   <mark>((fn rfib [a b]</mark>
-						(lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-					</code></pre>
+				<!--Slide 1-->
+				<section data-transition="zoom"> <h1>Hi There!</h1></section>
+				<!--Slide 2-->
+				<section data-transition="zoom"><h3>My Experience at Bennett University</h3></section>
+				<!--Slide 3-->
+				<section id="fragments">
+					<h4>I Learned</h4>
+					<br>
+					<p class="fragment">To be <span class="fragment grow">HUMBLE!</span></p>
+					<p>There are always people who fight a greater fight than yours'!</p>
 				</section>
-				<section data-transition="zoom">This Zoom is Crazy man!!!</section>
+				<!--Slide 4-->
+				<section data-transition="zoom"><h4>My Project</h4></section>
 				<section data-transition="zoom">Third slide</section>
 				<section data-transition="zoom">Fourth Slide</section>
 			</div>
