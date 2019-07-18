@@ -67,14 +67,19 @@
 						<h4>Our Approach</h4>
 					</section>
 					<section>
-						Project Details
+						<h5>Project Details</h5>
+						<p class="fragment">One Shot Video Object Segmentation (OSVOS)</p>
+						<p class="fragment">First Frame of the Video is anotated</p>
+						<p class="fragment">CNN</p>
 					</section>
 					<section>
-						Datasets
+						<h5>Datasets</h5>
+						<p class="fragment">Densly Anotated Video Object Segmentation (DAVIS)</p>
+						<p class="fragment"> 480p & 1080p Footages</p>
 					</section>
 					<section>
 							<h2>Let's see some Code!</h2>
-							<pre><code class="hljs" data-trim data-line-numbers>
+							<pre><code class="hljs" data-trim data-line-numbers="2,10-14">
 									import numpy as np
 									import tensorflow as tf
 									slim = tf.contrib.slim
@@ -92,7 +97,7 @@
 							</code></pre>
 						</section>
 						<section>
-								<pre><code class="hljs" data-trim data-line-numbers>
+								<pre><code class="hljs" data-trim data-line-numbers="2-5">
 										# Train parameters
 										parent_path = os.path.join('models', 'OSVOS_parent',
 											 'OSVOS_parent.ckpt-50000')
@@ -100,6 +105,16 @@
 										max_training_iters = 5000
 								</code></pre>
 						</section>
+						<section>
+							<pre><code class="hljs" data-trim data-line-numbers="2-6">
+								# Test the network
+								with tf.Graph().as_default():
+									with tf.device('/gpu:' + str(gpu_id)):
+										checkpoint_path = os.path.join('models', seq_name, 
+											seq_name+'.ckpt-'+str(max_training_iters))
+										osvos.test(dataset, checkpoint_path, result_path)
+							</code></pre>
+					</section>
 					<section data-transition="zoom">
 						<h3>Supercomputer</h3>
 						<p class="fragment">Nvidia DGX Tesla V100</p>
